@@ -191,25 +191,3 @@ def train_neural_network(x):
 
 #Execution        
 train_neural_network(x)
-
-"""def train_neural_network(x):
-    prediction = convolutional_neural_network(x)
-    cost = tf.reduce_mean( tf.nn.softmax_cross_entropy_with_logits(logits=prediction,labels=y) )
-    optimizer = tf.train.AdamOptimizer().minimize(cost)
-    
-    hm_epochs = 7
-    with tf.Session() as sess:
-        sess.run(tf.global_variables_initializer())
-
-        for epoch in range(hm_epochs):
-            _, c = sess.run([optimizer, cost], feed_dict={x: X_train[:3500,:], y: y_train[:3500,:]})
-            epoch_loss = c
- 
-            print('Epoch', epoch +1 , 'completed out of',hm_epochs,', loss:',epoch_loss)
-
-        correct = tf.equal(tf.argmax(prediction, 1), tf.argmax(y, 1))
-
-        accuracy = tf.reduce_mean(tf.cast(correct, 'float'))
-        print('Accuracy:',accuracy.eval({x: X_pritest[:300,:], y: y_pritest[:300,:]}))
-
-train_neural_network(x)"""
